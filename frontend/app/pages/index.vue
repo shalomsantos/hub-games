@@ -43,12 +43,8 @@ const router = useRouter();
 
 onMounted(() => {
   const player = localStorage.getItem("playerName");
-  console.log("Player name:", player);
-
-  if (player) {
-    router.push("/dino-runner-like"); // já tem nome → vai pro jogo
-  } else {
-    router.push("/player"); // não tem → pede nome
+  if (!player) {
+    router.push("/player"); 
   }
 });
 
